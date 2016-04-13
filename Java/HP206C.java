@@ -28,9 +28,9 @@ public class HP206C
 		device.read(0x10, data, 0, 6);
 		
 		// Convert the data to 20-bits
-		double cTemp = ((((data[0] & 0xFF) & 0x0F) * 65536) + ((data[1] & 0xFF) * 256) + (data[2] & 0xFF)) / 100;
+		double cTemp = (((data[0] & 0x0F) * 65536) + ((data[1] & 0xFF) * 256) + (data[2] & 0xFF)) / 100.0;
 		double fTemp = (cTemp * 1.8) + 32;
-		double pressure = ((((data[3] & 0xFF) & 0x0F) * 65536) + ((data[4] & 0xFF) * 256) + (data[5] & 0xFF)) / 100;
+		double pressure = (((data[3] & 0x0F) * 65536) + ((data[4] & 0xFF) * 256) + (data[5] & 0xFF)) / 100.0;
 		
 		// Send OSR and channel setting command
 		device.write((byte)(0x44 | 0x01));
@@ -41,7 +41,7 @@ public class HP206C
 		device.read(0x31, data1, 0, 3);
 		
 		// Convert the data to 20-bits
-		double altitude = ((((data[0] & 0xFF) & 0x0F) * 65536) + ((data[1] & 0xFF)* 256) + (data[2] & 0xFF)) / 100;
+		double altitude = (((data[0] & 0x0F) * 65536) + ((data[1] & 0xFF)* 256) + (data[2] & 0xFF)) / 100.0;
 		
 		// Output data to screen
 		System.out.printf("Altitude: %.2f meters %n", altitude);
