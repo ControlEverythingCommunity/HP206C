@@ -54,7 +54,6 @@ void main()
 	config[0] = 0x44 | 0x01;
 	write(file, config, 1);
 	sleep(1);
-	
 
 	// Read 3 bytes of data from register(0x31)
 	// altitude msb, altitude csb, altitude lsb
