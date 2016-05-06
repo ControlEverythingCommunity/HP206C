@@ -37,8 +37,8 @@ public class HP206C
 		
 		// Read 3 bytes of data
 		// altitude msb, altitude csb, altitude lsb
-		byte[] data = new byte[3];
-		device.read(0x31, data1, 0, 3);
+		data = new byte[3];
+		device.read(0x31, data, 0, 3);
 		
 		// Convert the data to 20-bits
 		double altitude = (((data[0] & 0x0F) * 65536) + ((data[1] & 0xFF)* 256) + (data[2] & 0xFF)) / 100.0;
