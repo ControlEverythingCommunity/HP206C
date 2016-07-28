@@ -35,7 +35,7 @@ void main()
 	char data[6] ={0};
 	if(read(file, data, 6) != 6)
 	{
-		printf("Erorr : Input/output Erorr \n");
+		printf("Error : Input/Output error \n");
 	}
 	else 
 	{
@@ -61,7 +61,7 @@ void main()
 	write(file, reg, 1);
 	if(read(file, data, 3) != 3)
 	{
-		printf("Erorr : Input/output Erorr \n");
+		printf("Error : Input/Output error \n");
 	}
 	else 
 	{
