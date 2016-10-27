@@ -10,8 +10,8 @@
 // HP206C I2C address is 0x76(118)
 #define Addr 0x76
 
-float cTemp = 0.0, fTemp = 0.0, pressure = 0.0;
-float altitude = 0.0;
+double cTemp = 0.0, fTemp = 0.0, pressure = 0.0;
+double altitude = 0.0;
 void setup()
 {
   // Set variable
